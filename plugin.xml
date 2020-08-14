@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-filetransferutil" version="1.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>FileTransferUtilPlugin</name>
+    <js-module name="FileTransferUtilPlugin" src="www/FileTransferUtilPlugin.js">
+        <clobbers target="FileTransferUtilPlugin" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="FileTransferUtilPlugin">
+                <param name="android-package" value="cordova.plugin.filetransferutil.FileTransferUtilPlugin" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/FileTransferUtilPlugin.java" target-dir="src/cordova/plugin/filetransferutil/FileTransferUtilPlugin" />
+    </platform>
+</plugin>
