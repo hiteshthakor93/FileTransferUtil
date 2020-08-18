@@ -185,18 +185,18 @@ public class FileTransferUtilPlugin extends CordovaPlugin {
     }
 
     private WifiConfiguration initHotspotConfig(String inputs, CallbackContext callbackContext) {
-        String ssid = null;
-        String password = null;
+        String ssid = "MyHost";
+        String password = "12345678";
 
-        JSONArray arr = new JSONArray(inputs);
-        JSONObject jObj = arr.getJSONObject(0);
-        //read user SSID and PASSWORD
-        try {            
-            ssid = jObj.getString("ssid");
-            password = jObj.getString("password");
-        }catch (JSONException e) {
-            callbackContext.error("wrong_parameters");
-        }
+        // JSONArray arr = new JSONArray(inputs);
+        // JSONObject jObj = arr.getJSONObject(0);
+        // //read user SSID and PASSWORD
+        // try {            
+        //     ssid = jObj.getString("ssid");
+        //     password = jObj.getString("password");
+        // }catch (JSONException e) {
+        //     callbackContext.error("wrong_parameters");
+        // }
 
         //set AP configuration
         WifiConfiguration wifiConfiguration = new WifiConfiguration();
