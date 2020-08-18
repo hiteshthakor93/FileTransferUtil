@@ -29,8 +29,7 @@ import android.net.wifi.WifiManager;
 import android.net.wifi.WifiConfiguration;
 import android.net.ConnectivityManager;
 import android.telephony.TelephonyManager;
-import org.json.simple.parser.ParseException;
-import org.json.simple.parser.JSONParser;
+
 
 /**
  * This class echoes a string called from JavaScript.
