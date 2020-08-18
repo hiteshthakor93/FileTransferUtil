@@ -189,13 +189,12 @@ public class FileTransferUtilPlugin extends CordovaPlugin {
         String ssid = null;
         String password = null;
 
-        Object obj = parser.parse(s);
-         JSONArray array = (JSONArray)obj;
+        JSONArray arr = new JSONArray(inputs);
+        JSONObject jObj = arr.getJSONObject(0);
         //read user SSID and PASSWORD
-        try {
-            JSONObject jsonobject = array.get(0);
-            ssid = jsonobject.getString("ssid");
-            password = jsonobject.getString("password");
+        try {            
+            ssid = jObj.getString("ssid");
+            password = jObj.getString("password");
         }catch (JSONException e) {
             callbackContext.error("wrong_parameters");
         }
