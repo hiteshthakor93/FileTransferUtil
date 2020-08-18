@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <name>FileTransferUtilPlugin</name>
     <js-module name="FileTransferUtilPlugin" src="www/FileTransferUtilPlugin.js">
-        <clobbers target="navigator.FileTransferUtilPlugin" />
+        <clobbers target="cordova.plugins.FileTransferUtilPlugin" />
     </js-module>
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
