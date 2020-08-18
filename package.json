@@ -14,7 +14,7 @@
     "fetchSpec": "latest"
   },
   "name": "cordova-plugin-filetransferutil",
-  "version": "0.0.6",
+  "version": "0.1.4",
   "cordova": {
     "id": "cordova-plugin-filetransferutil",
     "platforms": ["android"]
@@ -25,6 +25,13 @@
   "author": {
     "name": "Hitesh Thakor"
   },
+  "bugs": {
+    "url": "https://github.com/hiteshthakor93/FileTransferUtil/issues"
+  },
   "license": "ISC",
-  "description": ""
-}
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiteshthakor93/FileTransferUtil.git"
+  }
+ }
