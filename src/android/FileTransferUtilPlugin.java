@@ -29,6 +29,8 @@ import android.net.wifi.WifiManager;
 import android.net.wifi.WifiConfiguration;
 import android.net.ConnectivityManager;
 import android.telephony.TelephonyManager;
+import org.json.simple.parser.ParseException;
+import org.json.simple.parser.JSONParser;
 
 /**
  * This class echoes a string called from JavaScript.
@@ -43,7 +45,7 @@ public class FileTransferUtilPlugin extends CordovaPlugin {
 
 
     @Override
-    public boolean execute(String action, JSONArray inputs, CallbackContext callbackContext) throws JSONException {
+    public boolean execute(String action, String inputs, CallbackContext callbackContext) throws JSONException {
 
         PluginResult result = null;
 
@@ -61,7 +63,7 @@ public class FileTransferUtilPlugin extends CordovaPlugin {
         return true;
     }
 
-    private PluginResult executeEnableWifiAP(JSONArray inputs, CallbackContext callbackContext) {
+    private PluginResult executeEnableWifiAP(String inputs, CallbackContext callbackContext) {
         Log.w(LOGTAG, "executeEnableAccessPoint");
 
 
@@ -183,13 +185,15 @@ public class FileTransferUtilPlugin extends CordovaPlugin {
         return dataNetworkEnabled;
     }
 
-    private WifiConfiguration initHotspotConfig(JSONArray inputs, CallbackContext callbackContext) {
+    private WifiConfiguration initHotspotConfig(String inputs, CallbackContext callbackContext) {
         String ssid = null;
         String password = null;
 
+        Object obj = parser.parse(s);
+         JSONArray array = (JSONArray)obj;
         //read user SSID and PASSWORD
         try {
-            JSONObject jsonobject = inputs.getJSONObject(0);
+            JSONObject jsonobject = array.get(0);
             ssid = jsonobject.getString("ssid");
             password = jsonobject.getString("password");
         }catch (JSONException e) {
